@@ -4,19 +4,9 @@ import { db } from "../firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useCart } from "../store/CartContext";
 import { useLocation, useNavigate } from "react-router-dom";
-
-
-
-
-
-
-
 const Menu = () => {
-
-
-
   const categoryEmojis = {
-    "Chatpati Chaat": "🌶️",
+    "Chatpati Chaat":"🌶️",
     "Chinese": "🥡",
     "Italian": "🍝",
     "Paranthe Wali Gali": "🫓",
@@ -30,8 +20,6 @@ const Menu = () => {
     "Tandoori Snacks": "🔥",
     "Thali & Combos": "🍱"
   };
-
-
   const [menuItems, setMenuItems] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
   const [stopScroll, setStopScroll] = useState(false);
@@ -131,7 +119,6 @@ const Menu = () => {
       },
       { threshold: 0.35 }
     );
-
     Object.values(categoryRefs.current).forEach((el) => {
       if (el) observer.observe(el);
     });
@@ -183,9 +170,7 @@ const Menu = () => {
                 <span className="cat-number">
                   {(i % categories.length) + 1}.
                 </span>
-
                 <span className="cat-name">{cat}</span>
-
                 <span className="cat-emoji">
                   {categoryEmojis[cat] || "🍽️"}
                 </span>
@@ -263,14 +248,14 @@ const Menu = () => {
       </div>
 
       {/* 🔥 FLOATING CART FOOTER (HIDE ON CART PAGE) */}
-      {/* {location.pathname !== "/cart" && totalQty > 0 && (
+      {location.pathname !== "/cart" && totalQty > 0 && (
         <div className="floating-cart">
           <span>{totalQty} item(s) added</span>
           <button onClick={() => navigate("/cart")}>
             View Cart →
           </button>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

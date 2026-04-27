@@ -7,22 +7,44 @@ const Cart = () => {
 
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
+  const [roomNo, setRoomNo] = useState("");
+  const [tableNo, setTableNo] = useState("");
+  const [note, setNote] = useState("");
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
   );
 
+  // ✅ PLACE ORDER (PRO VERSION)
   const handlePlaceOrder = () => {
     if (!name || mobile.length !== 10) {
-      alert("Please enter valid name & 10 digit mobile number");
+      alert("Enter valid name & 10 digit mobile");
       return;
     }
 
+    if (!roomNo && !tableNo) {
+      alert("Enter Room No or Table No");
+      return;
+    }
+
+    const orderData = {
+      customerName: name,
+      mobile,
+      roomNo,
+      tableNo,
+      note,
+      items: cartItems,
+      total: totalPrice,
+      time: new Date().toLocaleString()
+    };
+
+    console.log("ORDER DATA 👉", orderData);
+
+    // future: send to backend / firebase
     window.location.href = "/order-status";
   };
 
-  //  REMOVE WITH ANIMATION
   const handleRemove = (id) => {
     const el = document.getElementById("item-" + id);
     if (el) {
@@ -35,7 +57,7 @@ const Cart = () => {
 
   return (
     <div className="cart-page">
-      <h1 className="cart-title">Your Cart</h1>
+      <h1 className="cart-title">Your Order Cart</h1>
 
       {cartItems.length === 0 ? (
         <div className="empty-cart-ui">
@@ -43,38 +65,30 @@ const Cart = () => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
               alt="Chef"
-              className="empty-cart-illustration"
             />
+            <h2>No items added yet 🍽️</h2>
+            <p>Select your favorite dishes or room services</p>
 
-            <h2>Your cart is feeling hungry 😋</h2>
-            <p>Looks like the chef is waiting for your order!</p>
-
-            <button
-              className="empty-cart-btn"
-              onClick={() => window.history.back()}
-            >
-              🍔 Explore Menu
+            <button onClick={() => window.history.back()}>
+              Explore Menu
             </button>
           </div>
         </div>
       ) : (
         <div className="cart-layout">
 
-          {/* LEFT SIDE – ITEMS */}
+          {/* LEFT */}
           <div className="cart-left">
 
             <div className="cart-items">
               {cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  id={"item-" + item.id}
-                  className="cart-item animate-item"
-                >
+                <div key={item.id} id={"item-" + item.id} className="cart-item">
+                  
                   <img src={item.image} alt={item.name} />
 
                   <div className="item-info">
                     <h3>{item.name}</h3>
-                    <p className="price">₹{item.price}</p>
+                    <p>₹{item.price}</p>
 
                     <div className="qty-control">
                       <button onClick={() => decreaseQty(item.id)}>-</button>
@@ -84,9 +98,7 @@ const Cart = () => {
                   </div>
 
                   <div className="item-actions">
-                    <div className="item-price-total">
-                      ₹{item.price * item.qty}
-                    </div>
+                    <h4>₹{item.price * item.qty}</h4>
 
                     <button
                       className="remove-btn"
@@ -99,7 +111,6 @@ const Cart = () => {
               ))}
             </div>
 
-            {/* ADD MORE BUTTON BELOW ITEMS */}
             <button
               className="add-more-btn"
               onClick={() => window.history.back()}
@@ -108,8 +119,9 @@ const Cart = () => {
             </button>
           </div>
 
-          {/* RIGHT SIDE – BILLING */}
+          {/* RIGHT – ORDER FORM */}
           <div className="cart-summary">
+
             <h2>Order Summary</h2>
 
             <div className="summary-row">
@@ -118,7 +130,7 @@ const Cart = () => {
             </div>
 
             <div className="summary-row">
-              <span>Items Total</span>
+              <span>Total Price</span>
               <span>₹{totalPrice}</span>
             </div>
 
@@ -129,6 +141,7 @@ const Cart = () => {
               <h2>₹{totalPrice}</h2>
             </div>
 
+            {/* CUSTOMER DETAILS */}
             <input
               type="text"
               placeholder="Your Name"
@@ -139,9 +152,30 @@ const Cart = () => {
             <input
               type="tel"
               placeholder="Mobile Number"
-              value={mobile}
               maxLength="10"
+              value={mobile}
               onChange={(e) => setMobile(e.target.value)}
+            />
+
+            {/* 🔥 NEW FIELDS */}
+            <input
+              type="text"
+              placeholder="Room No (if staying)"
+              value={roomNo}
+              onChange={(e) => setRoomNo(e.target.value)}
+            />
+
+            <input
+              type="text"
+              placeholder="Table No (if dining)"
+              value={tableNo}
+              onChange={(e) => setTableNo(e.target.value)}
+            />
+
+            <textarea
+              placeholder="Special Instructions (optional)"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
             />
 
             <button className="place-order-btn" onClick={handlePlaceOrder}>

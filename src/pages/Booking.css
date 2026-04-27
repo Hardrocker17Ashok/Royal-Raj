@@ -1,0 +1,190 @@
+/* HERO */
+.booking-hero {
+  height: 80vh;
+  background: url('/ch/r5.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 🔥 LIGHT GRADIENT (overlay nahi, premium visibility trick) */
+.booking-hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3),
+    rgba(0,0,0,0.4)
+  );
+}
+
+/* TEXT */
+.hero-text {
+  position: relative;
+  text-align: center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: white;
+
+  /* 🔥 readability */
+  text-shadow: 0 5px 20px rgba(0,0,0,0.9);
+}
+
+.hero-text p {
+  color: #eee;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+}
+
+/* SECTION */
+.booking-section {
+  min-height: 100vh;
+
+  /* 🔥 FLEX CENTER */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 10%;
+
+  /* BACKGROUND */
+  background: url('/ch/backadd.jpg') center/cover no-repeat;
+}
+
+/* CARD CENTER FIX */
+.booking-card {
+  width: 100%;
+  max-width: 800px;
+
+  padding: 50px;
+  border-radius: 25px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+
+  animation: fadeUp 1s ease forwards;
+}
+
+/* FORM */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* INPUT */
+.form-grid input,
+.form-grid select {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: rgba(0,0,0,0.5); /* 🔥 dark input for visibility */
+  color: white;
+}
+
+/* BUTTON */
+.book-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 40px;
+  border: none;
+
+  background: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px; /* spacing increase */
+}
+
+/* DATE GROUP */
+.date-group {
+  grid-column: span 2; /* full width */
+  display: flex;
+  gap: 20px;
+}
+
+/* DATE BOX */
+.date-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.date-box label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: gold;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* INPUT */
+.date-box input {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: rgba(0,0,0,0.5);
+  color: white;
+}
+
+/* 🔥 CARD HEIGHT INCREASE */
+.booking-card {
+  padding: 60px; /* increased from 50 */
+  min-height: 520px; /* vertical bada */
+}
+
+/* INPUT HEIGHT IMPROVE */
+.form-grid input,
+.form-grid select {
+  padding: 16px; /* bigger feel */
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .date-group {
+    flex-direction: column;
+  }
+}

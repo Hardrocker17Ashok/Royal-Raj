@@ -1,0 +1,97 @@
+/* Gallery Main Page */
+.gallery-page {
+  padding: 120px 5% 50px; /* 120px top padding to avoid Navbar overlap */
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #fafafa; /* Soft off-white for luxury feel */
+}
+
+.gallery-title {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif; /* Elegant Serif */
+  margin-bottom: 50px;
+  text-align: center;
+  color: #0f172a;
+}
+
+.gallery-title span {
+  color: #d4af37; /* Royal Gold accent */
+}
+
+/* GRID - Dynamic & Spacious */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* CARD - Luxury Styling */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 350px; /* Taller cards look more premium */
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HOVER EFFECT - Subtle Zoom & Glow */
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY - Glassmorphism Effect */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px); /* Blurred glass feel */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+}
+
+.gallery-card:hover .overlay {
+  opacity: 1;
+}
+
+/* LIGHTBOX - Full Screen Premium */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95); /* Deeper black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}

@@ -1,6 +1,3 @@
-/* ================= WRAPPER ================= */
-/* ===== PROFESSIONAL FOOD BACKGROUND ===== */
-
 .menu-wrapper {
   min-height: 100vh;
   background: linear-gradient(135deg, #fff7ed, #ecfdf5);
@@ -8,7 +5,6 @@
   position: relative;
 }
 
-/* soft food texture overlay */
 .menu-wrapper::before {
   content: "";
   position: absolute;
@@ -19,28 +15,19 @@
   opacity: 0.4;
   pointer-events: none;
 }
-
-/* keep content above background */
-
-
-
-/* ================= MENU PAGE ================= */
-/* ================= MENU PAGE ================= */
 .menu-page {
   max-width: 1100px;
   margin: auto;
   position: relative;
 
-  /* 🔥 HEADER HEIGHT OFFSET */
+  /*  HEADER HEIGHT OFFSET */
   padding: 90px 20px 40px;
-  /* ⬅️ TOP PADDING INCREASED */
+  /* TOP PADDING INCREASED */
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   position: relative;
   z-index: 5;
 }
-
-
 
 .menu-title {
   color: #14532d;
@@ -51,7 +38,7 @@
   margin-bottom: 30px;
 }
 
-/* ================= CATEGORY BAR ================= */
+
 .category-bar {
   position: sticky;
   top: 90px;
@@ -111,7 +98,6 @@
   }
 }
 
-/* ================= CATEGORY SECTION ================= */
 .menu-category-section {
   margin-bottom: 60px;
   scroll-margin-top: 160px;
@@ -124,14 +110,12 @@
   color: #14532d;
 }
 
-/* ================= LIST ================= */
 .menu-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* ================= CARD ================= */
 .menu-card {
   width: 100%;
   display: flex;
@@ -149,8 +133,6 @@
 
 
 
-/* ===== SAFETY FIX: ENSURE ITEMS ALWAYS VISIBLE ===== */
-
 .menu-card.show {
   opacity: 1;
   transform: translateX(0);
@@ -164,7 +146,6 @@
   transform: translateX(-140px);
 }
 
-/* IMAGE */
 .menu-image {
   position: relative;
 
@@ -175,10 +156,6 @@
   background-position: center;
 
   border-radius: 30px;
-  /* 🔲 smooth corners */
-  margin: 14px;
-
-  /* 🪞 GLASS EFFECT */
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.35);
@@ -200,15 +177,13 @@
   pointer-events: none;
 }
 
+
 .menu-card:hover .menu-image {
   transform: scale(1.15);
   transition: transform 0.4s ease;
 }
 
 
-
-
-/* INFO */
 .menu-info {
   padding: 20px;
 }
@@ -228,9 +203,6 @@
 .menu-wrapper {
   -webkit-overflow-scrolling: touch;
 }
-
-
-/* ================= ADD TO CART ================= */
 .add-btn {
   margin-top: 14px;
   padding: 10px 22px;
@@ -343,8 +315,6 @@
   touch-action: pan-y;
 }
 
-/* ================= RESPONSIVE ================= */
-/* ===== MOBILE SCROLL ANIMATION SUPPORT ===== */
 
 /* ================= MOBILE MENU GRID FIX ================= */
 
@@ -459,7 +429,7 @@
   animation-play-state: paused;
 }
 
-/* ================= KITCHEN DECOR ================= */
+
 
 .kitchen-decor {
   position: fixed;
@@ -482,7 +452,6 @@
   left: 24px;
 }
 
-/* RIGHT */
 .kitchen-decor.right {
   right: 24px;
 }
@@ -589,7 +558,6 @@
 
 
 /* ===== REMOVE HORIZONTAL SCROLL ON MOBILE ===== */
-/* ================= MOBILE FIX PACK ================= */
 
 @media (max-width: 768px) {
 
@@ -621,7 +589,7 @@
 
   .category-track {
     animation: none;
-    /* stop auto animation on mobile */
+    
     overflow-x: auto;
     padding: 0 10px;
     scroll-behavior: smooth;
@@ -657,7 +625,7 @@
     padding: 14px;
   }
 
-  /* disable left-right animation on mobile */
+
   .from-left,
   .from-right {
     transform: translateX(0);
@@ -673,7 +641,7 @@
 
 }
 
-/* ================= FINAL MOBILE FIX PACK ================= */
+
 @media (max-width: 768px) {
 
   /* stop horizontal scroll */
@@ -718,11 +686,11 @@
     display: none;
   }
 
-  /* ===== MENU GRID FIX (2 ITEMS PER ROW) ===== */
+  
   .menu-list.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 🔥 2 items */
+
     gap: 14px;
   }
 
@@ -765,13 +733,13 @@
     justify-content: center;
   }
 
-  /* disable left-right animation on mobile */
+
   .from-left,
   .from-right {
     transform: translateX(0) !important;
   }
 
-  /* ===== FOOTER CART FIX ===== */
+  
   .floating-cart {
     left: 10px;
     right: 10px;
