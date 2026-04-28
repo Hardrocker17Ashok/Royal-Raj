@@ -44,7 +44,7 @@ const Contact = () => {
     {/* Direction Overlay */}
     <div className="map-overlay">
       <a 
-        href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3373.2022047582054!2d75.95309897523471!3d27.194224676480502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396da7f7126476a1%3A0xe52c73e5728ef60a!2sRaj%20Hotel%20%26%20Restaurant!5e1!3m2!1sen!2sin!4v1776762501332!5m2!1sen!2sin" 
+        href="https://www.google.com/maps/dir/?api=1&destination=27.1942247,75.9556739" 
         target="_blank" 
         rel="noreferrer" 
         className="direction-btn"

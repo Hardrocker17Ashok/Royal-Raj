@@ -225,3 +225,76 @@
   font-weight: 700;
   font-style: italic;
 }
+
+
+/* 🔥 PREMIUM MOBILE FOOTER */
+@media (max-width: 768px) {
+
+  .footer {
+    padding-top: 50px;
+  }
+
+  /* 🔥 GRID → STACK */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  /* 🔥 BRAND CENTER */
+  .footer-logo {
+    font-size: 28px;
+  }
+
+  .footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  /* 🔥 HEADINGS */
+  .footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* 🔥 LINKS CENTER */
+  .footer-col ul {
+    padding: 0;
+  }
+
+  .footer-col ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* 🔥 SOCIAL ICONS CENTER */
+  .footer-social {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .footer-social a {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  /* 🔥 SPACING CLEAN */
+  .footer-col {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-col:last-child {
+    border-bottom: none;
+  }
+
+  /* 🔥 BOTTOM BAR */
+  .footer-bottom {
+    font-size: 13px;
+    padding: 15px;
+    line-height: 1.5;
+  }
+}

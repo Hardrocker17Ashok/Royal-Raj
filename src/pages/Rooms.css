@@ -411,3 +411,35 @@
     object-fit: cover;
   }
 }
+/* 🔥 REMOVE GLASS EFFECT */
+.glass-boxe {
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* text readability improve */
+.hero-content {
+  background: rgba(0,0,0,0.25); /* light overlay */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* 🔥 MOBILE BUTTON FIX - SAME ROW */
+@media (max-width: 768px) {
+
+  .hero-buttonss {
+    flex-direction: row !important; /* 🔥 column hata diya */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .btn-gold,
+  .btn-outline {
+    width: auto; /* 🔥 full width hata diya */
+    flex: 1; /* dono equal space le */
+    padding: 12px;
+    font-size: 14px;
+  }
+}

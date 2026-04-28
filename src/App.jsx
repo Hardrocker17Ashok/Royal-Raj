@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import Rooms from "./pages/Rooms";
 import Cart from "./pages/Cart";
-import About from "./pages/About"
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
 import OrderStatus from "./pages/OrderStatus";
@@ -22,10 +22,9 @@ import SeedMenu from "./seed/SeedMenu";
 
 import { CartProvider } from "./store/CartContext";
 
-import EmojiLoader from "./components/EmojiLoader";  
+import EmojiLoader from "./components/EmojiLoader";
 import ScrollToTop from "./components/ScrollToTop";
 import Gallery from "./pages/Gallery";
-
 
 
 // 🔥 Layout Wrapper
@@ -50,7 +49,7 @@ function AppLayout() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-status" element={<OrderStatus />} />
-         <Route path="/booking" element={<Booking />} />
+        <Route path="/booking" element={<Booking />} />
 
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -76,28 +75,29 @@ function App() {
   useEffect(() => {
     const initializeApp = async () => {
       try {
-        // Yahan apni API calls likho jo app start hone par chahiye
-        // Example: const menuData = await fetch('your-api/menu');
-        
-        // Simulation: Jab tak data fetch ho raha hai
-        // Jese hi data aa jaye, setLoading(false) kar dena
-        await new Promise((resolve) => setTimeout(resolve, 2500)); 
-        
+        await new Promise((resolve) => setTimeout(resolve, 2500));
       } catch (error) {
         console.error("Data load failed:", error);
       } finally {
-        setLoading(false); // Data aane ke baad loader band
+        setLoading(false);
       }
     };
 
     initializeApp();
   }, []);
 
+  // 🔥 FIX: browser scroll restore disable
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
   return (
     <CartProvider>
       <BrowserRouter>
+        
+        {/* 🔥 SCROLL FIX */}
+        <ScrollToTop />
 
-         <ScrollToTop />
         {loading && <EmojiLoader />}
 
         {!loading && <AppLayout />}

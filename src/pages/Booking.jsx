@@ -93,7 +93,7 @@ Guests: ${form.guests}`;
               </div>
 
             </div>
-            <input type="date" name="checkout" onChange={handleChange} />
+            
 
           </div>
 
