@@ -188,3 +188,70 @@
     flex-direction: column;
   }
 }
+
+
+/* 🔥 MOBILE PERFECT FORM FIX */
+@media (max-width: 768px) {
+
+  /* HERO FIX */
+  .booking-hero {
+    height: 55vh;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  /* SECTION FIX */
+  .booking-section {
+    padding: 40px 5%;
+    min-height: auto; /* 🔥 remove forced height */
+  }
+
+  /* 🔥 CARD FIX (MAIN ISSUE SOLVED) */
+  .booking-card {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 25px 18px; /* 🔥 reduce padding */
+    border-radius: 18px;
+
+    min-height: auto; /* 🔥 remove fixed height */
+  }
+
+  /* 🔥 GRID FIX */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* 🔥 DATE GROUP FIX */
+  .date-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .date-box {
+    width: 100%;
+  }
+
+  /* 🔥 INPUT FIX */
+  .form-grid input,
+  .form-grid select,
+  .date-box input {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* 🔥 BUTTON FIX */
+  .book-btn {
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 15px;
+  }
+}

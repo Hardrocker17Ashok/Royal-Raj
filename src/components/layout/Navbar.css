@@ -285,3 +285,44 @@
     color: var(--brand);
   }
 }
+
+/* 🔥 PREMIUM MOBILE MENU LINKS */
+.mobile-menu a {
+  position: relative;
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  transition: all 0.3s ease;
+}
+
+/* 🔥 subtle background hover */
+.mobile-menu a:hover {
+  background: rgba(212,175,55,0.12);
+  color: var(--brand);
+  transform: translateX(6px);
+}
+
+/* 🔥 active link (premium highlight) */
+.mobile-menu a.active {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: black;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+/* 🔥 divider line between items */
+.mobile-menu a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}

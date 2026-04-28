@@ -384,3 +384,30 @@
     padding: 12px;
   }
 }
+
+/* 🔥 FORCE SAME LAYOUT FOR ALL ROOMS (MOBILE) */
+@media (max-width: 768px) {
+
+  /* 🔥 override reverse issue */
+  .room-grid,
+  .reverse .room-grid {
+    flex-direction: column !important;
+  }
+
+  /* ensure full width */
+  .image-slider,
+  .room-content {
+    width: 100% !important;
+  }
+
+  /* fix weird stretching */
+  .image-slider {
+    height: 220px;
+  }
+
+  .slider-track img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
