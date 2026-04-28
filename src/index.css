@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🔥 Hard Reset */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #fafafa; /* same as your page */
+}
+
+/* Remove any hidden horizontal overflow */
 body {
-  font-family: system-ui, sans-serif;
+  position: relative;
+}
+
+/* Fix all sections */
+.gallery-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 120px 5% 50px;
+  background-color: #fafafa;
+}
+
+/* Prevent any element from breaking layout */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
 }

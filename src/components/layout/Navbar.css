@@ -196,3 +196,92 @@
   .desktop-only { display: none; }
   .mobile-menu-btn { display: block; }
 }
+
+/* 🔥 MOBILE NAV IMPROVEMENT */
+@media (max-width: 768px) {
+
+  /* Navbar compact */
+  .navbar {
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 14px;
+  }
+
+  .navbar-inner {
+    padding: 12px 18px;
+  }
+
+  /* Hide desktop links */
+  .navbar-links {
+    display: none;
+  }
+
+  /* Menu button (3 line) */
+  .mobile-menu-btn {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .mobile-menu-btn:active {
+    transform: scale(0.9);
+  }
+
+  /* 🔥 PREMIUM DROPDOWN */
+  .mobile-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 240px;
+
+    padding: 18px;
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    /* Animation base */
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+    transform-origin: top right;
+    pointer-events: none;
+
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* OPEN STATE */
+  .mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* 🔥 MENU ITEMS */
+  .mobile-menu a {
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
+
+  /* HOVER EFFECT */
+  .mobile-menu a:hover {
+    background: rgba(212,175,55,0.15);
+    color: var(--brand);
+    transform: translateX(5px);
+  }
+
+  /* ACTIVE LINK */
+  .mobile-menu a.active {
+    background: rgba(212,175,55,0.2);
+    color: var(--brand);
+  }
+}

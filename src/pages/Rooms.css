@@ -88,7 +88,7 @@
 }
 
 /* BUTTONS */
-.hero-buttons {
+.hero-buttonss {
   display: flex;
   gap: 15px;
 
@@ -302,5 +302,85 @@
 
   .hero-content h1 {
     font-size: 2rem;
+  }
+}
+
+
+
+
+/* 🔥 PREMIUM MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
+
+  /* HERO FIX (banner height control) */
+  .rooms-hero {
+    height: 55vh; /* 🔥 pehle 80vh tha */
+  }
+
+  .glass-boxe {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  /* 🔥 ROOM SECTION FIX */
+  .room-section {
+    padding: 60px 5%; /* compact spacing */
+  }
+
+  .room-grid {
+    flex-direction: column;
+    gap: 20px; /* 🔥 space between image & text */
+  }
+
+  /* 🔥 IMAGE FIX (main problem solve) */
+  .image-slider {
+    width: 100%;
+    height: 220px;
+    border-radius: 18px;
+  }
+
+  .slider-track img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  /* 🔥 TEXT FIX */
+  .room-content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .room-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .room-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .room-content ul li {
+    font-size: 0.85rem;
+  }
+
+  /* 🔥 BUTTON FIX */
+  .hero-buttonss {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-gold,
+  .btn-outline {
+    width: 100%;
+    padding: 12px;
   }
 }

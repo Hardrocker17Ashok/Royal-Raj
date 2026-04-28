@@ -37,7 +37,7 @@ const Rooms = () => {
       <h1>Luxury Stay at Royal Raj</h1>
       <p>✨ Comfort • 🍽️ Dining • 🛎️ Best Service</p>
 
-      <div className="hero-buttons">
+      <div className="hero-buttonss">
         <button className="btn-gold" onClick={() => navigate("/booking")}>
           📞 Book Now
         </button>
