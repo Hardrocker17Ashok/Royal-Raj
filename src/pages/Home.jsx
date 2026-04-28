@@ -75,29 +75,39 @@ const Home = () => {
               </button>
             </div>
 
+
+
+
+
+
+
             <div className="hero-features">
+  <div className="hero-features-track">
 
-              <div className="feature">
-                <span>🛏️</span>
-                <p>Luxury Rooms</p>
-              </div>
+    {/* ORIGINAL ITEMS */}
+    <div className="feature">
+      <span>🛏️</span>
+      <p>Luxury Rooms</p>
+    </div>
 
-              <div className="feature">
-                <span>🍽️</span>
-                <p>Delicious Food</p>
-              </div>
+    <div className="feature">
+      <span>🍽️</span>
+      <p>Delicious Food</p>
+    </div>
 
-              <div className="feature">
-                <span>📶</span>
-                <p>Free WiFi</p>
-              </div>
+    <div className="feature">
+      <span>📶</span>
+      <p>Free WiFi</p>
+    </div>
 
-              <div className="feature">
-                <span>🚗</span>
-                <p>Parking Available</p>
-              </div>
+    <div className="feature">
+      <span>🚗</span>
+      <p>Parking Available</p>
+    </div>
 
-            </div>
+
+  </div>
+</div>
 
           </div>
         </div>

@@ -6,6 +6,11 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // 🔥 fallback (for all browsers)
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
   }, [pathname]);
 
   return null;
