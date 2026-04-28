@@ -509,19 +509,7 @@
   }
 }
 
-/* 🔥 HERO FEATURES FIX */
-@media (max-width: 768px) {
 
-  .hero-features {
-    gap: 10px;
-    padding-bottom: 5px;
-  }
-
-  .feature {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-}
 
 /* 🔥 GENERAL SPACING FIX */
 @media (max-width: 768px) {
@@ -767,20 +755,7 @@
 }
 
 /* 🔥 MOBILE: REAL TRANSPARENT GLASS */
-@media (max-width: 768px) {
 
-  .glass-boxhome {
-    background: rgba(0, 0, 0, 0.18); /* 🔥 bahut light (almost transparent) */
-
-    backdrop-filter: blur(4px); /* 🔥 halka blur only */
-    -webkit-backdrop-filter: blur(4px);
-
-    box-shadow: none; /* 🔥 heavy shadow hata diya */
-
-    border: 1px solid rgba(255,255,255,0.08); /* subtle glass border */
-  }
-
-}
 /* 🔥 MOBILE: MIRROR TRANSPARENT (NO BLUR) */
 @media (max-width: 768px) {
 
@@ -891,4 +866,59 @@
     padding: 12px;
     font-weight: 600;
   }
+}
+
+
+/* 🔥 HERO TEXT FIX (MOBILE) */
+@media (max-width: 768px) {
+
+  .glass-boxhome {
+    top: 58%; /* 🔥 thoda niche shift */
+    transform: translate(-50%, -50%);
+  }
+
+  .home-hero {
+    padding-top: 70px; /* 🔥 navbar space */
+  }
+
+}
+
+/* 🔥 SHOW ROOM CONTENT ALWAYS (MOBILE) */
+@media (max-width: 768px) {
+
+  .room-overlay {
+    opacity: 1 !important; /* 🔥 always visible */
+    transform: translateY(0) !important;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 8px;
+
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.8),
+      rgba(0,0,0,0.3),
+      transparent
+    );
+  }
+
+  .room-overlay h3 {
+    font-size: 13px;
+  }
+
+  .room-overlay p {
+    font-size: 11px;
+  }
+
+}
+
+.room-overlay h3 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.room-overlay p {
+  color: #ffd700;
 }
