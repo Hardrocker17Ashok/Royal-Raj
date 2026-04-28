@@ -79,7 +79,7 @@ const Navbar = () => {
           <NavLink to="/" onClick={handleScrollToTop}>Home</NavLink>
           <NavLink to="/about" onClick={handleScrollToTop}>About</NavLink>
           <NavLink to="/rooms" onClick={handleScrollToTop}>Rooms</NavLink>
-          <NavLink to="/about" onClick={handleScrollToTop}>Why Us</NavLink>
+         
           <NavLink to="/gallery" onClick={handleScrollToTop}>Gallery</NavLink>
           <NavLink to="/menu" onClick={handleScrollToTop}>Menu</NavLink>
           <NavLink to="/cart" onClick={handleScrollToTop}>Cart</NavLink>
@@ -108,7 +108,7 @@ const Navbar = () => {
         <NavLink to="/" onClick={handleScrollToTop}>Home</NavLink>
         <NavLink to="/about" onClick={handleScrollToTop}>About</NavLink>
         <NavLink to="/rooms" onClick={handleScrollToTop}>Rooms</NavLink>
-        <NavLink to="/about" onClick={handleScrollToTop}>Why Us</NavLink>
+        
         <NavLink to="/menu" onClick={handleScrollToTop}>Menu</NavLink>
         <NavLink to="/gallery" onClick={handleScrollToTop}>Gallery</NavLink>
         <NavLink to="/cart" onClick={handleScrollToTop}>Cart</NavLink>

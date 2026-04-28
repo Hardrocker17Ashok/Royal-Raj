@@ -158,11 +158,19 @@
   animation: scroll 20s linear infinite;
 }
 
+/* 🔥 UNIFORM IMAGE SIZE */
 .why-image-track img {
-  height: 200px;
+  width: 300px;      /* 🔥 fixed width */
+  height: 200px;     /* already fixed */
+  object-fit: cover; /* 🔥 image crop properly */
   border-radius: 10px;
+  transition: 0.4s ease;
 }
 
+
+.why-image-track img:hover {
+  transform: scale(1.05);
+}
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -211,5 +219,96 @@
   .about-frame img,
   .about-frame div {
     width: 100%;
+  }
+}
+
+/* 🔥 MOBILE: 2 CARDS PER ROW */
+@media (max-width: 768px) {
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 🔥 2 per row */
+    gap: 15px;
+  }
+
+  .feature-card {
+    width: 100%; /* flex wali width hata di */
+    padding: 18px;
+  }
+}
+
+
+
+/* 🔥 PREMIUM FEATURE CARD */
+.feature-card {
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+
+  border-radius: 18px;
+  padding: 22px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 🔥 LIGHT GLOW BACKGROUND */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  background: radial-gradient(circle at top left,
+    rgba(255,183,3,0.25),
+    transparent 40%),
+    radial-gradient(circle at bottom right,
+    rgba(255,0,110,0.2),
+    transparent 40%);
+
+  opacity: 0;
+  transition: 0.4s;
+  z-index: 0;
+}
+
+/* 🔥 HOVER GLOW */
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* 🔥 CONTENT ABOVE GLOW */
+.feature-card * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔥 HOVER EFFECT */
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(255,183,3,0.25);
+}
+
+/* 🔥 TITLE */
+.feature-card h3 {
+  color: #ffb703;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* 🔥 TEXT */
+.feature-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+  .why-image-track img {
+    width: 220px;
+    height: 160px;
   }
 }

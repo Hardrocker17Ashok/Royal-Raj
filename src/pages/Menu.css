@@ -954,3 +954,13 @@
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 768px) {
+  .category-track {
+    animation: none !important;
+    overflow-x: auto;
+    display: flex;
+    gap: 12px;
+  }
+}

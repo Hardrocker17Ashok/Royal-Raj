@@ -22,16 +22,16 @@ const About = () => {
 
       {/* Header */}
       <header className="about-header">
-  <div className="about-overlay"></div>
+        <div className="about-overlay"></div>
 
-  <div className="about-hero-content">
-    <h1>About Royal Raj</h1>
-    <p>
-      Experience comfort, quality dining, and warm hospitality near NIMS University. 
-      A perfect place for a relaxing stay and delicious meals.
-    </p>
-  </div>
-</header>
+        <div className="about-hero-content">
+          <h1>About Royal Raj</h1>
+          <p>
+            Experience comfort, quality dining, and warm hospitality near NIMS University.
+            A perfect place for a relaxing stay and delicious meals.
+          </p>
+        </div>
+      </header>
 
       {/* ================= ABOUT ================= */}
       <section className="about-section" id="about">
@@ -133,6 +133,10 @@ const About = () => {
           <div className="feature-card">
             <h3>👨‍🍳 Hygienic</h3>
             <p>Safety & cleanliness first</p>
+          </div>
+          <div class="feature-card">
+            <h3>Affordable Prices</h3>
+            <p>Best quality food and rooms at budget-friendly prices.</p>
           </div>
         </div>
       </section>

@@ -298,3 +298,55 @@
     line-height: 1.5;
   }
 }
+
+
+/* 🔥 PROFESSIONAL MOBILE FOOTER (2 COLUMN LAYOUT) */
+@media (max-width: 768px) {
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 🔥 2 columns */
+    gap: 20px;
+    text-align: left; /* 🔥 center hata diya */
+  }
+
+  /* first column (brand) full width */
+  .footer-col:first-child {
+    grid-column: span 2;
+  }
+
+  /* logo center only */
+  .footer-logo {
+    text-align: center;
+  }
+
+  .footer-col p {
+    text-align: center;
+  }
+
+  /* headings left aligned */
+  .footer-col h3 {
+    text-align: left;
+  }
+
+  /* links left aligned */
+  .footer-col ul {
+    text-align: left;
+  }
+
+  /* social icons center */
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* remove divider lines (clean look) */
+  .footer-col {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.footer-col h3 {
+  color: #ffb703;
+  letter-spacing: 0.5px;
+}
